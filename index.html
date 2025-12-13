@@ -5755,6 +5755,20 @@
         // Thêm event listener cho cả 2 cửa
         leftDoor.addEventListener('click', openDoorsAndPlayMusic);
         rightDoor.addEventListener('click', openDoorsAndPlayMusic);
+
+        // Đọc tham số customer từ URL và thay thế tên khách
+        const urlParams = new URLSearchParams(window.location.search);
+        const customerName = urlParams.get('customer');
+        
+        if (customerName) {
+          const guestNameElement = document.getElementById('QUYKHACH');
+          if (guestNameElement) {
+            const headline = guestNameElement.querySelector('h3.ladi-headline');
+            if (headline) {
+              headline.textContent = customerName;
+            }
+          }
+        }
       });
     </script>
 
@@ -6144,17 +6158,17 @@
               </div>
             </div>
           </div>
-          <div id="IMAGE31" class="ladi-element">
+          <div data-action="true" id="IMAGE31" class="ladi-element">
             <div class="ladi-image ladi-transition">
               <div class="ladi-image-background"></div>
             </div>
           </div>
-          <div id="IMAGE34" class="ladi-element">
+          <div data-action="true" id="IMAGE34" class="ladi-element">
             <div class="ladi-image ladi-transition">
               <div class="ladi-image-background"></div>
             </div>
           </div>
-          <div id="IMAGE35" class="ladi-element">
+          <div data-action="true" id="IMAGE35" class="ladi-element">
             <div class="ladi-image ladi-transition">
               <div class="ladi-image-background"></div>
             </div>
@@ -6340,7 +6354,7 @@
                         </h3>
                       </div>
                       <div id="QUYKHACH" class="ladi-element">
-                        <h3 class="ladi-headline ladi-transition">Bạn + Người Thương</h3>
+                        <h3 class="ladi-headline ladi-transition">Bạn & Người thương</h3>
                       </div>
                       <div id="PARAGRAPH188" class="ladi-element">
                         <div class="ladi-paragraph ladi-transition">
@@ -8450,8 +8464,8 @@
                       class="ladi-gallery-view-item selected"
                       data-index="0"
                     ></div>
-                    <div class="ladi-gallery-view-item" data-index="1"></div>
-                    <div class="ladi-gallery-view-item" data-index="2"></div>
+                    <!-- <div class="ladi-gallery-view-item" data-index="1"></div>
+                    <div class="ladi-gallery-view-item" data-index="2"></div> -->
                   </div>
                   <div class="ladi-gallery-control">
                     <div class="ladi-gallery-control-box">
@@ -8495,8 +8509,8 @@
                       class="ladi-gallery-view-item selected"
                       data-index="0"
                     ></div>
-                    <div class="ladi-gallery-view-item" data-index="1"></div>
-                    <div class="ladi-gallery-view-item" data-index="2"></div>
+                    <!-- <div class="ladi-gallery-view-item" data-index="1"></div>
+                    <div class="ladi-gallery-view-item" data-index="2"></div> -->
                   </div>
                   <div class="ladi-gallery-control">
                     <div class="ladi-gallery-control-box">
@@ -9808,7 +9822,14 @@
         "GROUP115": { "a": "group", "D": "fadeInRight", "A": "1s" },
         "IMAGE29": {
           "a": "image",
-          "cs": [{ "dr": "action", "dw": "CHURE", "a": "popup" }],
+          "cs": [
+            {
+              "dr": "action",
+              "dC": "assets/images/image-wedding/JAY_7382.jpg",
+              "dF": "image",
+              "a": "lightbox"
+            }
+          ],
           "D": "fadeInLeft",
           "A": "1s"
         },
@@ -9823,6 +9844,14 @@
         "IMAGE30": {
           "a": "image",
           "cs": [{ "dr": "action", "dw": "CODAU", "a": "popup" }],
+          "cs": [
+            {
+              "dr": "action",
+              "dC": "assets/images/image-wedding/JAY_7231.jpg",
+              "dF": "image",
+              "a": "lightbox"
+            }
+          ],
           "D": "fadeInRight",
           "A": "1s"
         },
@@ -9861,9 +9890,45 @@
         "GROUP119": { "a": "group", "D": "fadeInLeft", "A": "1s" },
         "SHAPE55": { "a": "shape", "F": "fadeInLeft", "C": "0s" },
         "GROUP121": { "a": "group", "D": "bounceIn", "A": "0s" },
-        "IMAGE31": { "a": "image", "D": "bounceIn", "A": "1s" },
-        "IMAGE34": { "a": "image", "D": "bounceIn", "A": "1s" },
-        "IMAGE35": { "a": "image", "D": "bounceIn", "A": "1s" },
+        "IMAGE31": { 
+          "a": "image", 
+          "D": "bounceIn", 
+          "A": "1s",
+          "cs": [
+            {
+              "dr": "action",
+              "dC": "assets/images/image-wedding/JAY_6705.jpg",
+              "dF": "image",
+              "a": "lightbox"
+            }
+          ]
+        },
+        "IMAGE34": { 
+          "a": "image", 
+          "D": "bounceIn", 
+          "A": "1s",
+          "cs": [
+            {
+              "dr": "action",
+              "dC": "assets/images/image-wedding/JAY_6759.jpg",
+              "dF": "image",
+              "a": "lightbox"
+            }
+          ]
+        },
+        "IMAGE35": { 
+          "a": "image", 
+          "D": "bounceIn", 
+          "A": "1s",
+          "cs": [
+            {
+              "dr": "action",
+              "dC": "assets/images/image-wedding/JAY_6799.jpg",
+              "dF": "image",
+              "a": "lightbox"
+            }
+          ]
+        },
         "PARAGRAPH185": {
           "option.is_product_mapping_name_custom": true,
           "a": "paragraph"
